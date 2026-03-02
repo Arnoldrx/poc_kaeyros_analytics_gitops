@@ -8,12 +8,15 @@ spec:
     apiVersion: argoproj.io/v1alpha1
     kind: Rollout
     name: demo-app
+  selector:
+    matchLabels:
+      app: demo-app
   minReplicas: 2
   maxReplicas: 5
   metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 60
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 60
