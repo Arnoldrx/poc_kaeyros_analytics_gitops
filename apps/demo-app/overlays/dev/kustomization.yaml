@@ -1,9 +1,15 @@
 resources:
-  - ../../base
+- ../../base
 
-patchesStrategicMerge:
-  - patch-replicas.yaml
+patches:
+- path: patch-replicas.yaml
+  target:
+    kind: Rollout
+    group: argoproj.io
+    version: v1alpha1
+    name: demo-app
+    namespace: demo-app
 
 images:
-  - name: 353388155957.dkr.ecr.us-east-1.amazonaws.com/demo-app
-    newTag: dev
+- name: 353388155957.dkr.ecr.us-east-1.amazonaws.com/demo-app
+  newTag: dev
