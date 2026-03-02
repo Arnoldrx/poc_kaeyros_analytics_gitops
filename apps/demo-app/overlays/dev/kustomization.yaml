@@ -12,4 +12,4 @@ patches:
 
 images:
 - name: 353388155957.dkr.ecr.us-east-1.amazonaws.com/demo-app
-  newTag: latest
+  newTag: 967dc0b995c5afc6e71128a41da03e46b637c002
